@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bestie Squad | Nabilla</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fdfafb;
+            background-image: radial-gradient(#ffdaef 1px, transparent 1px);
+            background-size: 25px 25px;
+            color: #444;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* NAVBAR - Identik dengan halaman lainnya */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ffd0e8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-weight: 900; 
+            color: #e0458a; 
+            font-size: 1.2rem; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links { list-style: none; display: flex; gap: 8px; }
+        .nav-links a {
+            text-decoration: none;
+            color: #c2527e;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active { background: #ffe0f0; color: #e0458a; }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 54px;
+            color: #d43a80;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-weight: 800;
+            color: #c06090;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        /* PHOTO GALLERY */
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+            margin-bottom: 60px;
+        }
+
+        .memory-card {
+            background: white;
+            padding: 20px;
+            border-radius: 30px;
+            border: 2px solid #ffd0e8;
+            box-shadow: 0 15px 30px rgba(224, 69, 138, 0.1);
+            transition: 0.4s ease;
+            text-align: left;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #ffdaef;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px 10px 10px;
+        }
+
+        .card-content h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #d43a80;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-item {
+            background: #fff0f7;
+            color: #e0458a;
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 800;
+            border: 1px solid #ffd0e8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px;
+            font-weight: 800;
+            color: #c06090;
+            background: #fff5fb;
+            font-size: 14px;
+        }
+
+        footer i {
+            color: #e0458a;
+        }
+
+        /* --- TAMBAHAN FLEKSIBEL HP --- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 15px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            .header {
+                margin: 40px 0 20px;
+            }
+
+            .header h1 {
+                font-size: 38px;
+            }
+
+            .header p {
+                font-size: 12px;
+            }
+
+            .memory-card {
+                padding: 15px;
+                border-radius: 25px;
+            }
+
+            .card-content h3 {
+                font-size: 28px;
+            }
+
+            .card-content p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-sparkles"></i> Nabilla's Space
+        </div>
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="friends.html" class="active">Friends</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>My Bestie Squad</h1>
+            <p>Making my life feel like a party!</p>
+        </div>
+
+        <div class="photo-gallery">
+            
+            <div class="memory-card">
+                <div class="image-wrapper">
+                    <img src="tib.jpeg" alt="TI 2B Squad">
+                </div>
+                <div class="card-content">
+                    <h3>The Dream Team TI 2B</h3>
+                    <p>Anak-anak TI 2B yang selalu bikin suasana kelas hidup. Dari yang serius nugas sampai yang random banget, semuanya jadi warna tersendiri di hari-hari kuliah.</p>
+                    <div class="tags">
+                        <span class="tag-item">#TI-2B</span>
+                        <span class="tag-item">#MyPenyemangat</span>
+                        <span class="tag-item">#Teammates</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="image-wrapper">
+                    <img src="berlima.jpeg" alt="Healing Session">
+                </div>
+                <div class="card-content">
+                    <h3>Library Chronicles</h3>
+                    <p>Perpustakaan jadi tempat favorit sejak ada mereka. Nggak cuma buat belajar, tapi juga tempat berbagi cerita di sela-sela kesibukan.</p>
+                    <div class="tags">
+                        <span class="tag-item">#Besties</span>
+                        <span class="tag-item">#MentalHealth</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="image-wrapper">
+                    <img src="jhs.jpeg" alt="Old Times">
+                </div>
+                <div class="card-content">
+                    <h3>Since The Beginning</h3>
+                    <p>Dari jaman seragam putih-biru sampai sekarang sibuk masing-masing. Bukti nyata kalau waktu berlalu, tapi kami tetap sefrekuensi.</p>
+                    <div class="tags">
+                        <span class="tag-item">#OldButGold</span>
+                        <span class="tag-item">#Friendship</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        Made with <i class="fa-solid fa-heart"></i> by Nabilla &middot; &copy; 2026
+    </footer>
+
+</body>
+</html>

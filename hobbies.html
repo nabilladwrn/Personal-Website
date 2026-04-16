@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Escape | Nabilla</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --pink-primary: #e0458a;
+            --pink-light: #ffd0e8;
+            --pink-soft: #fff0f7;
+            --text-dark: #444;
+            --text-muted: #666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #fdfafb;
+            background-image: radial-gradient(#ffdaef 1px, transparent 1px);
+            background-size: 25px 25px;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* NAVBAR - SAMA DENGAN HOMEPAGE */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #ffd0e8;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { 
+            font-weight: 900; 
+            color: #e0458a; 
+            font-size: 1.2rem; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 8px; 
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #c2527e;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active { 
+            background: #ffe0f0; 
+            color: #e0458a; 
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        .header {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 54px;
+            color: #d43a80;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-weight: 800;
+            color: #c06090;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* GRID */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .hobby-card {
+            background: white;
+            border-radius: 25px;
+            border: 2px solid #ffd0e8;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s ease;
+            box-shadow: 0 10px 25px rgba(224, 69, 138, 0.08);
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .hobby-icon {
+            font-size: 42px;
+            color: #ff6baf;
+            flex-shrink: 0;
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover .hobby-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--pink-primary);
+        }
+
+        .hobby-content h3 {
+            color: #d43a80;
+            font-size: 20px;
+            margin-bottom: 6px;
+            font-weight: 900;
+        }
+
+        .hobby-content p {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .badge {
+            position: absolute;
+            background: #ffe0f0;
+            color: #e0458a;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            top: 15px;
+            right: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #c06090;
+            font-weight: 800;
+            font-size: 14px;
+            background: #fff5fb;
+            margin-top: 60px;
+        }
+
+        footer i {
+            color: #e0458a;
+        }
+
+        /* --- SYNC DENGAN HOMEPAGE (MEDIA QUERY) --- */
+        @media (max-width: 700px) {
+            /* Navigasi disamain persis homepage */
+            nav {
+                padding: 15px 15px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+
+            /* Ukuran Header disamain biar gak kegedean di HP */
+            .header {
+                margin: 40px 0 30px;
+            }
+
+            .header h1 {
+                font-size: 36px; /* Ukurannya senada sama h1 Homepage di HP */
+            }
+
+            .header p {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+
+            /* Layout Kartu di HP */
+            .hobby-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .hobby-card {
+                padding: 25px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hobby-icon {
+                font-size: 40px;
+                margin-bottom: 5px;
+            }
+
+            footer {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-sparkles"></i> Nabilla's Space
+        </div>
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="hobbies.html" class="active">Hobbies</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>My Escape</h1>
+            <p>How I recharge my batteries outside of TI class</p>
+        </div>
+
+        <div class="hobby-grid">
+            
+            <div class="hobby-card">
+                <div class="badge">Must Watch</div>
+                <i class="fa-solid fa-film hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Anime & Movie Marathon</h3>
+                    <p>Nggak ada yang ngalahin serunya maraton anime atau film seharian sambil makan indomie soto + nugget.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="badge">Fact</div>
+                <i class="fa-solid fa-brain hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Psychology Fun Facts</h3>
+                    <p>Suka bacain fakta psikologis yang relate sama kehidupan sehari-hari.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="badge">Style</div>
+                <i class="fa-solid fa-shirt hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Outfit Inspo</h3>
+                    <p>Suka lihatin referensi outfit biar dapet ide kalau mau pergi hangout.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="badge">Vibes</div>
+                <i class="fa-solid fa-music hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Galau Mode On</h3>
+                    <p>Dengerin lagu galau karena pengen aja, bukan galau beneran.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="badge">Chill</div>
+                <i class="fa-solid fa-cloud hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Termenung</h3>
+                    <p>Sukaaa bengong random mikirin kehidupan, tapi kadang malah dapet ide unik.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <div class="badge">Visual</div>
+                <i class="fa-solid fa-heart hobby-icon"></i>
+                <div class="hobby-content">
+                    <h3>Everything Aesthetic</h3>
+                    <p>Semua hal estetik pasti bikin aku betah untuk dilihat lama-lama.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        Made with <i class="fa-solid fa-heart"></i> by Nabilla &middot; &copy; 2026
+    </footer>
+
+</body>
+</html>
